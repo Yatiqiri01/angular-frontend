@@ -1,0 +1,90 @@
+
+<form [formGroup]="regForm" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+      <input matInput placeholder="Nombre"
+             formControlName="nombre"
+             name="nombre"
+             [(ngModel)]="nombre"
+              required >
+      <mat-error
+        *ngIf="regForm.controls['nombre'].hasError('required') && regForm.controls['nombre'].touched">
+        Nombre es Requerido
+      </mat-error>
+    </mat-form-field>
+  <br />
+  <mat-form-field>
+    <input matInput placeholder="Apellidos"
+           formControlName="apellidos"
+           name="apellidos"
+           [(ngModel)]="apellidos"
+           required >
+    <mat-error
+      *ngIf="regForm.controls['apellidos'].hasError('required') && regForm.controls['apellidos'].touched"
+    >
+      Apellido es Requerido
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Edad"
+           formControlName="edad"
+           name="idEdad"
+           [(ngModel)]="edad"
+           required >
+    <mat-error *ngIf="regForm.controls['edad'].hasError('required') && regForm.controls['edad'].touched">
+      Edad es Requerido
+    </mat-error>
+  </mat-form-field>
+  <br />
+  <mat-form-field>
+    <input matInput placeholder="tipo"
+           formControlName="tipo"
+           name="tipo"
+           [(ngModel)]="tipo"
+            required >
+    <mat-error
+      *ngIf="regForm.controls['tipo'].hasError('required') && regForm.controls['tipo'].touched">
+      Tipo es Requerido
+    </mat-error>
+  </mat-form-field>
+<br />
+<mat-form-field>
+  <input matInput placeholder="Paquete"
+         formControlName="Paquete"
+         name="Paquete"
+         [(ngModel)]="Paquete"
+          required >
+  <mat-error
+    *ngIf="regForm.controls['Paquete'].hasError('required') && regForm.controls['Paquete'].touched">
+    Paquete es Requerido
+  </mat-error>
+</mat-form-field>
+<mat-form-field>
+  <input matInput [matDatepicker]="fechaPaquete" placeholder="Choose a date" formControlName="fechaPaquete">
+  <mat-datepicker-toggle matSuffix [for]="fechaPaquete"></mat-datepicker-toggle>
+  <mat-datepicker #fechaPaquete></mat-datepicker>
+</mat-form-field>
+<mat-form-field>
+  <input matInput placeholder="estadoPaquete"
+         formControlName="estadoPaquete"
+         name="estadoPaquete"
+         [(ngModel)]="estadoPaquete"
+          required >
+  <mat-error
+    *ngIf="regForm.controls['estadoPaquete'].hasError('required') && regForm.controls['estadoPaquete'].touched">
+    Estado del paquete es Requerido
+  </mat-error>
+</mat-form-field>
+<br />
+  <button mat-raised-button (click)="miFuncion()"  color="primary">Registrar</button>
+  </form>
+<br />
+<h1>{{nombre}}</h1>
+
+<div>
+  <div *ngIf="mostrar">
+    Muestra Mensaje
+  </div>
+  <br />
+  <button mat-button color="primary" (click)="cambiarValor()">Cambiar Valor</button>
+</div>
+

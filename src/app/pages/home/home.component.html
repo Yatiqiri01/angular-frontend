@@ -1,0 +1,13 @@
+<form>
+  <br />
+  {{txtUsujario | uppercase}}
+  <br />
+  {{fecha | date:"MM/dd/yy" }}
+  <br />
+  {{moneda | currency}}
+
+  <ul *ngFor="let usuario of usuarios">
+    <li>{{usuario.nombre}}<button mat-button (click)="mostrarUsuario(usuario)">Mostrar Datos</button></li>
+  </ul>
+
+</form>
