@@ -1,15 +1,15 @@
 export class Usuario {
   constructor(
-    public _id: String,
-    public nombre: String,
-    public apellidos: String,
+    public _id: string,
+    public nombre: string,
+    public apellidos: string,
     public fechaHabilitacion: Date,
     public __v: number,
-    public tipo: String,
-    public estado: String,
+    public tipo: string,
+    public estado: string,
     public Paquete: Number,
     public fechaPaquete: Date,
-    public estadoPaquete: String
+    public estadoPaquete: string
     ) {
   }
 }

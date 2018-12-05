@@ -1,0 +1,6 @@
+<form>
+  <ul *ngFor="let usuario of usuarios">
+    <li>{{usuario.nombre}}<button mat-button (click)="eliminarUsuario(usuario)">Eliminar usuarios</button></li>
+  </ul>
+
+</form>

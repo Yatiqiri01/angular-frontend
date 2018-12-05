@@ -28,4 +28,10 @@ export class AppComponent {
   goToRegistro() {
     this.router.navigate(['']);
   }
+  goToEliminar() {
+    this.router.navigate(['eliminar']);
+  }
+  goToActualizar() {
+    this.router.navigate(['actualizar']);
+  }
 }

@@ -1,14 +1,13 @@
-import { Component, OnInit, OnChanges } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ServiciosService } from '../../services/servicios.service';
 import { Usuario } from '../../clases/usuario';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  selector: 'app-eliminar',
+  templateUrl: './eliminar.component.html',
+  styleUrls: ['./eliminar.component.scss']
 })
-
-export class HomeComponent implements OnInit, OnChanges {
+export class EliminarComponent implements OnInit {
   public usuarios: Array<Usuario>;
   constructor(private service: ServiciosService) {
     this.llamarServicio();
@@ -30,10 +29,10 @@ export class HomeComponent implements OnInit, OnChanges {
       });
   }
 
-  public mostrarUsuario(user: Usuario) {
-    this.service.getGlobal<Usuario>('/user/' + user.nombre,null).subscribe(data => {
+  public eliminarUsuario(user: Usuario) {
+    this.service.deleteGlobal<Usuario>(user.nombre, '/user/delete/',null).subscribe(data => {
       console.log(data);
-      window.alert('Nombre: ' + data.nombre + ' Apellidos: ' + data.apellidos);
+      //window.alert('Nombre: ' + data.nombre + ' Apellidos: ' + data.apellidos);
     }, error=> {
       window.alert('Error al encontrar usuario');
     });

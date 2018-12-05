@@ -17,6 +17,9 @@ import { InicioComponent } from './pages/inicio/inicio.component';
 import { ActualizarComponent } from './pages/actualizar/actualizar.component';
 import { ListarComponent } from './pages/listar/listar.component';
 import { SheetComponent } from './pages/inicio/sheet/sheet.component';
+import { EliminarComponent } from './pages/eliminar/eliminar.component';
+
+import { from } from 'rxjs';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,8 @@ import { SheetComponent } from './pages/inicio/sheet/sheet.component';
     InicioComponent,
     ActualizarComponent,
     ListarComponent,
-    SheetComponent
+    SheetComponent,
+    EliminarComponent
   ],
   imports: [
     BrowserModule,

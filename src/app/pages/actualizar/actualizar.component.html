@@ -1,3 +1,6 @@
-<p>
-  actualizar works!
-</p>
+<form>
+  <ul *ngFor="let usuario of usuarios">
+    <li>{{usuario.nombre}}<button mat-button (click)="actualizarUsuario(usuario)">Actualizar apellido</button></li>
+  </ul>
+
+</form>

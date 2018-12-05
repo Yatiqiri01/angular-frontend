@@ -49,10 +49,15 @@ export class RegistroComponent implements OnInit {
         nombre:this.nombre,
         apellidos: this.apellidos,
         edad: this.edad,
-        estado:this.estado,
-        Paquete:this.Paquete,
-        fechaPaquete: this.fechaPaquete,
-        estadoPaquete: this.estadoPaquete
+        corresp:{
+          estado:this.estado,
+          paquetes:[{
+            Paquete: this.Paquete,
+            fechaPaquete:this.fechaPaquete,
+            estadoPaquete: this.estadoPaquete
+          }
+          ]
+         }
         };  
       
         this.service.postGlobal<User>(obj, '/user/insert',null).subscribe(data => {
